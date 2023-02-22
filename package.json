@@ -1,0 +1,36 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
+		"test:unit": "vitest run --dir packages"
+	},
+	"dependencies": {
+		"@nuxtjs/router": "^1.2.1",
+		"@nuxtjs/tailwindcss": "^6.2.0",
+		"@pinia/nuxt": "^0.4.6",
+		"@types/request-ip": "^0.0.37",
+		"ant-design-vue": "^3.2.15",
+		"device-detector-js": "^3.0.3",
+		"nuxt": "3.0.0",
+		"pinia": "^2.0.28",
+		"request-ip": "^3.3.0",
+		"swiper": "^8.4.5",
+		"ua-parser-js": "^1.0.33",
+		"unplugin-vue-components": "^0.22.12",
+		"vue-advanced-cropper": "^2.8.8",
+		"vue3-google-map": "^0.15.0"
+	},
+	"devDependencies": {
+		"@babel/runtime": "^7.20.13",
+		"@element-plus/nuxt": "^1.0.3",
+		"@nuxt/test-utils": "^3.2.0",
+		"@vant/nuxt": "^1.0.0",
+		"playwright": "^1.30.0",
+		"sass": "^1.57.1",
+		"vitest": "^0.28.5"
+	}
+}
