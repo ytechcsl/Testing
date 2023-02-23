@@ -29,9 +29,14 @@ export default defineNuxtConfig({
 		// The private keys which are only available within server-side
 		apiSecret: '123',
 		apiBase: 'http://localhost:4500',
+		hpubKey: 'hajkhkldnkfnkcjdkmnckmdls',
+		cpubKey: 'ckefmlkmelofoelwcmlcmklmcel@',
+		cpriKey: '#&cmkdmclamlkdmkdk,93849*!$',
 		// Keys within public, will be also exposed to the client-side
 		public: {
-			apiBase: 'https://api.testing.com'
+			apiBase: 'https://api.testing.com',
+			hpubKey: 'hajkhkldnkfnkcjdkmnckmdls',
+			cpubKey: 'ckefmlkmelofoelwcmlcmklmcel@'
 		}
 	},
 	modules: [

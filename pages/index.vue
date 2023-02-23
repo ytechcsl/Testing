@@ -205,11 +205,21 @@ onMounted(async () => {
 });
 
 async function fetchIP() {
-    const data: any = await $fetch("/api/iparea");
+    const data: any = await $fetch("/api/iparea", {
+        headers: {
+            btoken: useBcrypt(),
+            "User-Agent": "User-Agent haha",
+        },
+    });
+    const area = useCookie<string>("area");
     console.log(data);
 }
 async function fetchUser() {
-    const data: any = await $fetch("/api/user");
+    const data: any = await $fetch("/api/user", {
+        headers: {
+            btoken: useBcrypt(),
+        },
+    });
     console.log(data);
 }
 

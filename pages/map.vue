@@ -16,5 +16,5 @@ import { GoogleMap, Marker } from "vue3-google-map";
 import { useSetting } from "~/stores/setting";
 const setting = useSetting();
 const center = computed(() => setting.cLocation);
-console.log(center, setting.cLocation);
+// console.log(center, setting.cLocation);
 </script>
