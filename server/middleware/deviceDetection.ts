@@ -23,7 +23,7 @@ export default defineEventHandler(async event => {
 			path: '/',
 			maxAge: 60 * 60 * 1
 		})
-		event.context.area = areaInfo
+		// event.context.area = areaInfo
 	} else {
 		const bytes = CryptoJS.AES.decrypt(cookie.area, config.cpriKey)
 		const areaInfo = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
