@@ -19,10 +19,7 @@ export default defineEventHandler(async event => {
 	if (!cookie.area) {
 		const areaInfo = await $fetch(`http://ip-api.com/json/${cIp}?fields=66846719`)
 		const encryptArea = CryptoJS.AES.encrypt(JSON.stringify(areaInfo), config.cpriKey).toString()
-		setCookie(event, 'area', encryptArea, {
-			path: '/',
-			maxAge: 60 * 60 * 1
-		})
+		setCookie(event, 'area', encryptArea)
 		// event.context.area = areaInfo
 	} else {
 		const bytes = CryptoJS.AES.decrypt(cookie.area, config.cpriKey)
