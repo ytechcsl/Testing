@@ -53,7 +53,7 @@ export default defineNuxtConfig({
 		],
 		'@nuxtjs/tailwindcss',
 		'@element-plus/nuxt',
-		['@vant/nuxt', { language: 'en-US' }]
+		'@vant/nuxt'
 	],
 	tailwindcss: {
 		cssPath: '~/assets/css/tailwind.css',

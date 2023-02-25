@@ -88,11 +88,11 @@
                 width="100"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80"
             />
-            <img
+            <!-- <img
                 class="float-right mx-4"
                 width="100"
-                :src="'https://cdn.cslvault.com/csl_whitelabel/tc/assets/component_contents/featured_content1/53f2e3a3-384e-4a0a-815a-305dc51c2bf7.png'"
-            />
+                :src="'/api/user/image'"
+            /> -->
             <p class="clear-none text-justify">
                 Maybe we can live without libraries, people like you and me.
                 Maybe. Sure, we're too old to change the world, but what about
