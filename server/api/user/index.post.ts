@@ -2,6 +2,7 @@ import { readMultipartFormData } from 'h3'
 import FormData from 'form-data'
 import axios from 'axios'
 export default defineEventHandler(async event => {
+	console.log('Header ', event.node.req.headers)
 	const body: Array<any> = <Array<any>>await readMultipartFormData(event)
 	console.log(body)
 	const formData: FormData = new FormData()
@@ -18,6 +19,7 @@ export default defineEventHandler(async event => {
 		},
 		data: formData
 	}
+
 	try {
 		const result = await (await axios(config1)).data
 		console.log(result)
@@ -25,6 +27,7 @@ export default defineEventHandler(async event => {
 		console.log(config.apiBase)
 		return result
 	} catch (error) {
+		// console.log(error)
 		return {
 			success: false,
 			code: 500
