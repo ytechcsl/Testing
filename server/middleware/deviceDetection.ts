@@ -8,6 +8,7 @@ export default defineEventHandler(async event => {
 	const deviceDetector = new DeviceDetector()
 	const deviceInfo = deviceDetector.parse(userAgent)
 	var clientIp = requestIP.getClientIp(event.node.req)
+	console.log(deviceInfo)
 
 	event.context.clientIp = clientIp
 	event.context.deviceInfo = deviceInfo
