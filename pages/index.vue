@@ -8,6 +8,9 @@
         <div>
             {{ bar }}
         </div>
+        <div>
+            {{ uAgent }}
+        </div>
         <button type="button" @click="goToFetchPage">Go to fetch</button>
         <button type="button" @click="gotoEditor">Editor</button>
         <button type="button" @click="gotoCropper">Cropper JS</button>
@@ -188,6 +191,10 @@ const form = reactive({
 const foo = useFoo();
 const bar = useBar();
 let token;
+let uAgent = "";
+if (process.client) {
+    uAgent = navigator.userAgent;
+}
 
 onMounted(async () => {
     token = useCookie<string>("token");

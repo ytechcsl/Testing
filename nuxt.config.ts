@@ -35,8 +35,8 @@ export default defineNuxtConfig({
 		// Keys within public, will be also exposed to the client-side
 		public: {
 			apiBase: 'https://api.testing.com',
-			hpubKey: 'hajkhkldnkfnkcjdkmnckmdls',
-			cpubKey: 'ckefmlkmelofoelwcmlcmklmcel@'
+			hpubKey: '',
+			cpubKey: ''
 		}
 	},
 	modules: [
