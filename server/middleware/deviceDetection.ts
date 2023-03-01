@@ -16,7 +16,7 @@ export default defineEventHandler(async event => {
 
 	const cookie = parseCookies(event)
 	// console.log('Cookies ', cookie)
-	const cIp = clientIp
+	/* const cIp = clientIp
 	if (!cookie.area) {
 		const areaInfo = await $fetch(`http://ip-api.com/json/${cIp}?fields=66846719`)
 		// console.log('Fetch area  ', areaInfo)
@@ -36,5 +36,5 @@ export default defineEventHandler(async event => {
 				maxAge: 60 * 60 * 1
 			})
 		}
-	}
+	} */
 })

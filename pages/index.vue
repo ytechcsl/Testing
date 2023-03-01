@@ -222,7 +222,12 @@ onMounted(async () => {
 if (process.server) {
     const headers: any = useRequestHeaders();
     // console.log(headers);
-    const data = await $fetch("/api/user", { headers });
+    const data = await $fetch("/api/user", {
+        headers: {
+            ...headers,
+            bToken: useBcrypt(),
+        },
+    });
     trick.setAnimalServerTrick(true);
     console.log("Pinia ", trick.animalServerTrick);
     console.log("Server data ", data);
@@ -232,7 +237,6 @@ async function fetchIP() {
     const data: any = await $fetch("/api/iparea", {
         headers: {
             btoken: useBcrypt(),
-            "User-Agent": "User-Agent haha",
         },
     });
     const area = useCookie<string>("area");
