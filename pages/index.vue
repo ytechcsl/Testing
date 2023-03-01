@@ -1,9 +1,11 @@
 <template>
     <div>
         <h1>Home page</h1>
-        {{ token }}
+        {{ token }} {{ useMomentDatetime("2023-03-01T04:43:45.848Z") }}
+        {{ useMomentDatetime("2023-03-01 12:03:55") }}
         <div>
-            {{ foo }}
+            {{ foo }} {{ useMomentDate("2023-03-01T04:43:45.848Z") }}
+            {{ useMomentDate("2023-03-01 12:03:55") }}
         </div>
         <div>
             {{ bar }}
