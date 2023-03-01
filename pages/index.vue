@@ -13,6 +13,7 @@
         <div>
             {{ uAgent }}
         </div>
+        <div>{{ someData }}</div>
         <button type="button" @click="goToFetchPage">Go to fetch</button>
         <button type="button" @click="gotoEditor">Editor</button>
         <button type="button" @click="gotoCropper">Cropper JS</button>
@@ -23,7 +24,9 @@
             <el-button type="success" @click="changePage('/map')">
                 Go to map
             </el-button>
-            <el-button type="info">Info</el-button>
+            <el-button type="info" @click="refreshAll">
+                Refresh Nuxt Data
+            </el-button>
             <el-button type="warning">Warning</el-button>
             <el-button type="danger">Danger</el-button>
         </el-row>
@@ -192,6 +195,8 @@ const form = reactive({
     desc: "",
 });
 
+let someData = "Some testing data";
+
 const foo = useFoo();
 const bar = useBar();
 let token;
@@ -201,6 +206,7 @@ if (process.client) {
 }
 
 onMounted(async () => {
+    someData = "Change to some new testing data";
     token = useCookie<string>("token");
     const data: any = await $fetch(
         "https://www.cloudflare.com/cdn-cgi/trace?format=json"
@@ -232,7 +238,15 @@ if (process.server) {
     console.log("Pinia ", trick.animalServerTrick);
     console.log("Server data ", data);
 }
-
+const refreshAll = async () => {
+    try {
+        console.log("Start refresh");
+        // await refreshNuxtData();
+        // preloadRouteComponents('/')
+        console.log("End refresh");
+    } finally {
+    }
+};
 async function fetchIP() {
     const data: any = await $fetch("/api/iparea", {
         headers: {
