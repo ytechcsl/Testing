@@ -15,18 +15,18 @@ export default defineEventHandler(async event => {
 	event.context.auth = { user: 123 }
 
 	const cookie = parseCookies(event)
-	console.log('Cookies ', cookie)
+	// console.log('Cookies ', cookie)
 	const cIp = clientIp
 	if (!cookie.area) {
 		const areaInfo = await $fetch(`http://ip-api.com/json/${cIp}?fields=66846719`)
-		console.log('Fetch area  ', areaInfo)
+		// console.log('Fetch area  ', areaInfo)
 		const encryptArea = CryptoJS.AES.encrypt(JSON.stringify(areaInfo), config.cpriKey).toString()
 		setCookie(event, 'area', encryptArea)
 		event.context.area = areaInfo
 	} else {
 		const bytes = CryptoJS.AES.decrypt(cookie.area, config.cpriKey)
 		const areaInfo = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-		console.log('De token ', areaInfo)
+		// console.log('De token ', areaInfo)
 		event.context.area = areaInfo
 		if (cIp !== areaInfo.query) {
 			const areaInfo = await $fetch(`http://ip-api.com/json/${cIp}?fields=66846719`)

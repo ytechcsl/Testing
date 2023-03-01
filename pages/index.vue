@@ -178,6 +178,8 @@
 </template>
 
 <script setup lang="ts">
+import { useTrick } from "~/stores/trick";
+const trick = useTrick();
 import { reactive } from "vue";
 const form = reactive({
     name: "",
@@ -211,7 +213,20 @@ onMounted(async () => {
                 `subfix":""}`
         )
     );
+    if (trick.animalServerTrick) return trick.setAnimalServerTrick(false);
+
+    const data1 = await $fetch("/api/user");
+    console.log("Pinia ", trick.animalServerTrick);
+    console.log("Client data ", data1);
 });
+if (process.server) {
+    const headers: any = useRequestHeaders();
+    // console.log(headers);
+    const data = await $fetch("/api/user", { headers });
+    trick.setAnimalServerTrick(true);
+    console.log("Pinia ", trick.animalServerTrick);
+    console.log("Server data ", data);
+}
 
 async function fetchIP() {
     const data: any = await $fetch("/api/iparea", {
