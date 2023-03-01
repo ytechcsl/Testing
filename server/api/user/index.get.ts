@@ -12,15 +12,15 @@ export default defineEventHandler(async event => {
 		headers
 	}
 
-	try {
-		const result = await (await axios(config1)).data
-		console.log('Result ', result)
-		return result
-	} catch (error) {
-		// console.log(error)
-		return {
-			success: false,
-			code: 500
-		}
-	}
+	// try {
+	const result = await (await axios(config1)).data
+	console.log('Result ', result)
+	return result
+	// } catch (error) {
+	// 	// console.log(error)
+	// 	return {
+	// 		success: false,
+	// 		code: 500
+	// 	}
+	// }
 })
