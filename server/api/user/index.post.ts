@@ -1,5 +1,6 @@
 import { readMultipartFormData } from 'h3'
 import FormData from 'form-data'
+// import fs from 'fs'
 import axios from 'axios'
 export default defineEventHandler(async event => {
 	console.log('Header ', event.node.req.headers)
@@ -7,7 +8,9 @@ export default defineEventHandler(async event => {
 	console.log(body)
 	const formData: FormData = new FormData()
 	for (const data of body) {
-		formData.append(data.name, data.type && data.filename ? data.data : data.data?.toString(), data.filename)
+		formData.append(data.name, data.type && data.filename ? data.data : data.data.toString(), data.filename)
+		// fs.writeFileSync('./' + data.filename, data.data)
+		// console.log(fs.createReadStream('./' + data.filename))
 	}
 	const config1 = {
 		method: 'post',

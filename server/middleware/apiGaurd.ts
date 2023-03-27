@@ -3,7 +3,7 @@ export default defineEventHandler(async event => {
 	const config = useRuntimeConfig()
 
 	const url = event.node.req.url
-	if (url?.startsWith('/api')) {
+	if (url?.startsWith('/api') && !url?.match('openai')) {
 		const device = event.context.deviceInfo
 		const bToken: any = event.node.req.headers?.btoken
 		if (!bToken) return device?.os && device?.device ? sendRedirect(event, '/', 302) : createError({ statusCode: 404, statusMessage: 'not_found' })

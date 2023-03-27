@@ -27,7 +27,9 @@
             <el-button type="info" @click="refreshAll">
                 Refresh Nuxt Data
             </el-button>
-            <el-button type="warning">Warning</el-button>
+            <el-button type="warning" @click="changePage('/gpt')">
+                Chat GPT
+            </el-button>
             <el-button type="danger">Danger</el-button>
         </el-row>
         <el-form :model="form" label-width="120px">
@@ -221,7 +223,11 @@ onMounted(async () => {
     );
     if (trick.animalServerTrick) return trick.setAnimalServerTrick(false);
 
-    const data1 = await $fetch("/api/user");
+    const data1 = await $fetch("/api/user", {
+        headers: {
+            btoken: useBcrypt(),
+        },
+    });
     console.log("Pinia ", trick.animalServerTrick);
     console.log("Client data ", data1);
 });

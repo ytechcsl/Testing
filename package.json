@@ -9,6 +9,7 @@
 		"test:unit": "vitest run --dir packages"
 	},
 	"dependencies": {
+		"@fingerprintjs/fingerprintjs-pro-vue-v3": "^1.1.2",
 		"@nuxtjs/router": "^1.2.1",
 		"@nuxtjs/tailwindcss": "^6.2.0",
 		"@pinia/nuxt": "^0.4.6",
@@ -37,6 +38,7 @@
 		"@element-plus/nuxt": "^1.0.3",
 		"@nuxt/test-utils": "^3.2.0",
 		"@vant/nuxt": "^1.0.0",
+		"nuxt-chatgpt": "^0.1.9",
 		"playwright": "^1.30.0",
 		"sass": "^1.57.1",
 		"vitest": "^0.28.5"
