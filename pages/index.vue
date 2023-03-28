@@ -30,7 +30,9 @@
             <el-button type="warning" @click="changePage('/gpt')">
                 Chat GPT
             </el-button>
-            <el-button type="danger">Danger</el-button>
+            <el-button type="danger" @click="changePage('/twin')"
+                >Tailwin CSS</el-button
+            >
         </el-row>
         <el-form :model="form" label-width="120px">
             <el-form-item label="Activity name">

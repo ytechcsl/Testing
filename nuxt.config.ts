@@ -53,8 +53,7 @@ export default defineNuxtConfig({
 		],
 		'@nuxtjs/tailwindcss',
 		'@element-plus/nuxt',
-		'@vant/nuxt',
-		'nuxt-chatgpt'
+		'@vant/nuxt'
 	],
 	tailwindcss: {
 		cssPath: '~/assets/css/tailwind.css',
@@ -64,9 +63,7 @@ export default defineNuxtConfig({
 		viewer: false
 	},
 	elementPlus: {},
-	chatgpt: {
-		apiKey: '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'
-	}
+	css: ['@fortawesome/fontawesome-svg-core/styles.css']
 	// vite: {
 	// 	plugins: [
 	// 		Components({
