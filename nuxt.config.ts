@@ -115,7 +115,7 @@ export default defineNuxtConfig({
 		},
 		rateLimiter: {
 			// Twitter search rate limiting
-			tokensPerInterval: 15,
+			tokensPerInterval: 12,
 			interval: 'minute',
 			fireImmediately: true
 		},
