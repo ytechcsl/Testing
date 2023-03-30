@@ -9,7 +9,6 @@
 		"test:unit": "vitest run --dir packages"
 	},
 	"dependencies": {
-		"@fingerprintjs/fingerprintjs-pro-vue-v3": "^1.1.2",
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/free-regular-svg-icons": "^6.4.0",
@@ -31,6 +30,7 @@
 		"h3": "^1.5.0",
 		"moment": "^2.29.4",
 		"nuxt": "^3.0.0",
+		"nuxt-csurf": "^1.2.0",
 		"pinia": "^2.0.28",
 		"request-ip": "^3.3.0",
 		"swiper": "^8.4.5",
@@ -44,6 +44,7 @@
 		"@element-plus/nuxt": "^1.0.3",
 		"@nuxt/test-utils": "^3.2.0",
 		"@vant/nuxt": "^1.0.0",
+		"nuxt-security": "^0.13.0",
 		"playwright": "^1.30.0",
 		"sass": "^1.57.1",
 		"vitest": "^0.28.5"

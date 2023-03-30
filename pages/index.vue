@@ -33,6 +33,9 @@
             <el-button type="danger" @click="changePage('/twin')"
                 >Tailwin CSS</el-button
             >
+            <el-button type="danger" @click="changePage('/tvant')"
+                >Tailwin Vant</el-button
+            >
         </el-row>
         <el-form :model="form" label-width="120px">
             <el-form-item label="Activity name">
