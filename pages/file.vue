@@ -2,6 +2,15 @@
     <div>
         <input type="file" name="nFile" id="iFile" @change="browseFile" />
         <button type="button" @click="submitForm">Upload file</button>
+        <pre class="px-4 rounded-md"> <code class="hljs javascript">javascript
+router.<span class="hljs-title function_">get</span>(<span class="hljs-string">'/'</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  res.<span class="hljs-title function_">send</span>(<span class="hljs-string">'Hello world!'</span>);
+});
+
+router.<span class="hljs-title function_">post</span>(<span class="hljs-string">'/users'</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  <span class="hljs-comment">// Create a new user</span>
+});
+</code> </pre>
     </div>
 </template>
 
