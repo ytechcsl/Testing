@@ -21,7 +21,7 @@ export default defineEventHandler(async event => {
 		})
 		// response.data.on('data', (chunk: any) => {
 		// 	const text = new TextDecoder('utf-8').decode(chunk)
-		// 	console.log(text)
+		// 	console.log(text.trim().replace(/data:/g, ''))
 		// })
 		setResponseHeader(event, 'content-type', 'text/event-stream')
 		return sendStream(event, response.data)

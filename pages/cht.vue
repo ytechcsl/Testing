@@ -110,7 +110,14 @@ async function submitForm() {
                         return;
                     }
                     const text = new TextDecoder("utf-8").decode(value);
-                    console.log(text);
+                    try {
+                        console.log(text.trim().replace(/data:/g, ""));
+                        console.log(
+                            JSON.parse(text.trim().replace(/data:/g, ""))
+                        );
+                    } catch (error) {
+                        console.log(error);
+                    }
                     read();
                 });
             }
