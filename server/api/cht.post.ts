@@ -1,11 +1,8 @@
+import axios from 'axios'
 export default defineEventHandler(async event => {
-	const body = await readBody(event)
-	console.log(event.node.req.headers)
-	console.log(body)
-	/* const data = await $fetch('https://ask-stream-zvpnsiaqoa-as.a.run.app/', {
-		method: 'POST',
-
-		body: {
+	try {
+		const body = await readBody(event)
+		const reqBody = {
 			messages: [
 				{
 					role: 'user',
@@ -14,8 +11,21 @@ export default defineEventHandler(async event => {
 			],
 			session: Date.now().toString(36) + Math.random().toString(36).substr(2, 5)
 		}
-	})
-	console.log(data)
-	setResponseHeader(event, 'content-type', 'text/event-stream')
-	return data */
+		const headers: any = {
+			'Content-Type': 'application/json',
+			Accept: 'text/event-stream'
+		}
+		const response = await axios.post('https://ask-stream-zvpnsiaqoa-as.a.run.app/', JSON.stringify(reqBody), {
+			headers: headers,
+			responseType: 'stream'
+		})
+		// response.data.on('data', (chunk: any) => {
+		// 	const text = new TextDecoder('utf-8').decode(chunk)
+		// 	console.log(text)
+		// })
+		setResponseHeader(event, 'content-type', 'text/event-stream')
+		return sendStream(event, response.data)
+	} catch (err) {
+		return createError({ statusCode: 401, statusMessage: 'Something went wrong' })
+	}
 })
