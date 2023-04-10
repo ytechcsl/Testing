@@ -55,8 +55,7 @@ export default defineNuxtConfig({
 		'@element-plus/nuxt',
 		'@vant/nuxt',
 		'nuxt-csurf',
-		'nuxt-security',
-		'@kevinmarrec/nuxt-pwa'
+		'nuxt-security'
 	],
 	csurf: {
 		// optional
@@ -153,37 +152,7 @@ export default defineNuxtConfig({
 		viewer: false
 	},
 	elementPlus: {},
-	css: ['@fortawesome/fontawesome-svg-core/styles.css'],
-	pwa: {
-		manifest: {
-			name: 'Testing',
-			short_name: 'NuxtVitePWA',
-			theme_color: '#ffffff',
-			icons: [
-				{
-					src: 'favicon.ico',
-					sizes: '192x192',
-					type: 'image/ico',
-					purpose: 'maskable'
-				},
-				{
-					src: 'favicon.ico',
-					sizes: '512x512',
-					type: 'image/ico',
-					purpose: 'maskable'
-				},
-				{
-					src: 'favicon.ico',
-					sizes: '512x512',
-					type: 'image/ico',
-					purpose: 'any'
-				}
-			]
-		},
-		workbox: {
-			enabled: true
-		}
-	}
+	css: ['@fortawesome/fontawesome-svg-core/styles.css']
 	// vite: {
 	// 	plugins: [
 	// 		Components({

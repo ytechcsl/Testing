@@ -43,7 +43,6 @@
 	"devDependencies": {
 		"@babel/runtime": "^7.20.13",
 		"@element-plus/nuxt": "^1.0.3",
-		"@kevinmarrec/nuxt-pwa": "^0.17.0",
 		"@nuxt/test-utils": "^3.2.0",
 		"@vant/nuxt": "^1.0.0",
 		"nuxt-security": "^0.13.0",
