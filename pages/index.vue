@@ -27,7 +27,7 @@
             <el-button type="info" @click="refreshAll">
                 Refresh Nuxt Data
             </el-button>
-            <el-button type="warning" @click="changePage('/gpt')">
+            <el-button type="warning" @click="changePage('/cht')">
                 Chat GPT
             </el-button>
             <el-button type="danger" @click="changePage('/twin')"

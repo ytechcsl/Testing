@@ -17,6 +17,9 @@ router.<span class="hljs-title function_">post</span>(<span class="hljs-string">
 
 <script lang="ts" setup>
 import axios from "axios";
+
+let data = ref("");
+
 async function submitForm() {
     /* // Send the HTTP POST request to the server
     fetch("https://ask-stream-zvpnsiaqoa-as.a.run.app/", {
